@@ -1,5 +1,6 @@
 FROM ubuntu
-RUN apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev cmake python3.10 vim gcc 
+RUN apt-get update
+RUN apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 RUN apt install -y cmake python3.10 vim gcc python3-pip aria2
 RUN apt clean
 RUN pip3 install torch numpy sentencepiece
