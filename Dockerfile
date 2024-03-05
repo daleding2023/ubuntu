@@ -10,7 +10,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp.v0
 #RUN apt-get -y update --fix-missing
 #RUN apt-get -y upgrade
 #RUN apt install -y wget
-RUN /usr/bin/wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | sudo apt-key add -
+RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | apt-key add -
 RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
 RUN apt-get -y update
 RUN apt install -y build-essential
