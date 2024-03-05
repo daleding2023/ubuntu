@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 RUN rm -rf /etc/apt/sources.list
 ADD sources.list /etc/apt/sources.list
