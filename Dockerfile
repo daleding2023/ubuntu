@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
 FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp
 #RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 #RUN rm -rf /etc/apt/sources.list
