@@ -1,6 +1,7 @@
 #FROM ubuntu:20.04
-#FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp  #sources.list 
-FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp.v0 #wget
+#FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp  #sources.list
+#wget
+FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp.v0
 #RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 #RUN rm -rf /etc/apt/sources.list
 #ADD sources.list /etc/apt/sources.list
