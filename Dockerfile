@@ -7,7 +7,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:llama.cpp
 #RUN apt-get -y update
 #RUN apt-get -y update --fix-missing
 #RUN apt-get -y upgrade
-RUN apt install -y build-essential 
+RUN apt install -y build-essential
 RUN apt install -y zlib1g-dev
 RUN apt install -y libncurses5-dev
 RUN apt install -y libgdbm-dev
@@ -18,11 +18,11 @@ RUN apt install -y libffi-dev
 RUN apt install -y libsqlite3-dev
 RUN apt install -y wget
 RUN apt install -y libbz2-dev
-RUN apt install -y cmake
-RUN apt install -y python3.10
 RUN apt install -y vim
 RUN apt install -y gcc
-RUN apt install -y python3-pip
+#RUN apt install -y cmake
+##RUN apt install -y python3.10
+#RUN apt install -y python3-pip
 #RUN apt install -y aria2
 #RUN apt clean
 #RUN apt-get clean \
