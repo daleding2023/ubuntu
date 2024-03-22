@@ -1,21 +1,17 @@
-FROM ubuntu:20.04
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
-ADD sources.list /etc/apt/sources.list
-RUN apt-get clean
-RUN apt-get -y update
-RUN apt-get install -y whiptail
-RUN apt-get install --assume-yes apt-utils
-RUN apt install -y wget
-RUN apt install -y vim
-RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | apt-key add -
-RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
-RUN apt-get -y update
-RUN apt install -y python3.10
-RUN apt install -y python3-pip
-RUN apt install -y cmake
-RUN apt install -y aria2
-RUN apt clean
-RUN apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-RUN pip3 install torch numpy sentencepiece
-RUN aria2c --select-file 21-23,25,26 'magnet:?xt=urn:btih:b8287ebfa04f879b048d4d4404108cf3e8014352&dn=LLaMA'
+FROM registry.cn-hangzhou.aliyuncs.com/models2024/ubuntu:u22base
+RUN pip3.10 install --upgrade pip
+RUN pip3.10 install --upgrade setuptools
+RUN pip3.10 install modelscope
+RUN pip3.10 install "modelscope[multi-modal]"
+RUN pip3.10 install "modelscope[nlp]"  -f https://modelscope.oss-cn-beijing.aliyuncs.com/releases/repo.html
+RUN pip3.10 install torch torchvision torchaudio
+RUN pip3.10 install --upgrade tensorflow==2.13.0
+RUN pip3.10 install pandas==1.3.5
+RUN pip3.10 install gradio==3.4.0
+RUN pip3.10 install arrow==1.2.3
+RUN pip3.10 install cattrs==22.2.0
+RUN pip3.10 install xlrd==2.0.1
+RUN pip3.10 install seaborn==0.12.2
+RUN pip3.10 install matplotlib==3.5.3
+RUN pip3.10 install matplotlib-inline==0.1.6
+RUN pip3.10 install openpyxl==3.1.1
