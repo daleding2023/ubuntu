@@ -13,8 +13,8 @@ RUN curl -SLO https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHO
     && rm -rf Python-${PYTHON_VERSION}*
 
 ENV PATH "/usr/local/bin:${PATH}"
-#ENV PIPARG "-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com"
-ENV PIPARG "-i https://mirrors.cloud.aliyuncs.com/pypi/simple --trusted-host mirrors.cloud.aliyuncs.com"
+ENV PIPARG "-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com"
+#ENV PIPARG "-i https://mirrors.cloud.aliyuncs.com/pypi/simple --trusted-host mirrors.cloud.aliyuncs.com"
 RUN pip3.10 install $PIPARG --upgrade pip
 RUN pip3.10 install $PIPARG --upgrade setuptools
 RUN pip3.10 install $PIPARG modelscope
